@@ -1,0 +1,152 @@
+
+const songs = [
+  {
+    id: 1,
+    title: "saint",
+    mood: "uplifting",
+    price: 29.99,
+    img: "./images/item-1.jpeg",
+    desc: `this is saint by saiint`,
+    size: 'small',
+  },
+  {
+    id: 2,
+    title: "open",
+    mood: "mellow",
+    price: 29.99,
+    img: "./images/item-2.jpeg",
+    desc: `this is open by saiint`,
+    size: 'medium'
+  },
+  {
+    id: 3,
+    title: "found",
+    mood: "uplifting",
+    price: 29.99,
+    img: "./images/item-3.jpeg",
+    desc: `this is found by saiint`,
+    size: 'medium'
+  },
+  {
+    id: 4,
+    title: "trip",
+    mood: "uplifting",
+    price: 29.99,
+    img: "./images/item-4.jpeg",
+    desc: `this is beam by saiint`,
+    size: 'large'
+  },
+  {
+    id: 5,
+    title: "oasis (ecstasy)",
+    mood: "uplifting",
+    price: 29.99,
+    img: "./images/item-5.jpeg",
+    desc: `this is oasis by saiint`,
+    size: 'small'
+  },
+  {
+    id: 6,
+    title: "echoes of light",
+    mood: "uplifting",
+    price: 29.99,
+    img: "./images/item-6.jpeg",
+    desc: `this is saint by saiint`,
+    size: 'medium',
+  },
+  {
+    id: 7,
+    title: "rockets",
+    mood: "hype",
+    price: 29.99,
+    img: "./images/item-7.jpeg",
+    desc: `this is rockets by saiint`,
+    size: 'medium'
+  },
+  {
+    id: 8,
+    title: "steppin",
+    mood: "hype",
+    price: 29.99,
+    img: "./images/item-8.jpeg",
+    desc: `this is steppin by saiint`,
+    size: 'small'
+  },
+  {
+    id: 9,
+    title: "zoom",
+    mood: "uplifting",
+    price: 29.99,
+    img: "./images/item-9.jpeg",
+    desc: `this is beam by saiint`,
+    size: 'large'
+  },
+  {
+    id: 10,
+    title: "visions",
+    mood: "mellow",
+    price: 29.99,
+    img: "./images/item-10.jpeg",
+    desc: `this is golden hour by saiint`,
+    size: 'small'
+  },
+]
+
+
+  
+
+
+// get parent element
+const pinContainer = document.querySelector(".pin-container");
+const filterBtns = document.querySelectorAll('.filter-btn')
+
+
+// display all items when page loads
+window.addEventListener("DOMContentLoaded", function () {
+  displaySongItems(songs);
+});
+
+// filter items // e = event object
+filterBtns.forEach(function (btn){
+  btn.addEventListener('click', function(e){ 
+    const mood = e.currentTarget.dataset.id
+    const songMoods = songs.filter(function(songItem){
+      if (songItem.mood === mood){
+        return songItem;
+      }
+    });
+
+    if(mood === "all"){
+      displaySongItems(songs)
+    } else {
+      displaySongItems(songMoods)
+    }
+      
+    console.log(songMoods)
+  })
+})
+
+function displaySongItems(songItems) {
+  let displaySongs = songItems.map(function (item) {
+    // console.log(item);
+
+    return `
+    
+    <div class="card card-${item.size} mb-1" >
+    <a href="#" class="">
+    <img src=${item.img} class="pin-img" alt=${item.title}>
+    <p>${item.title}</p>
+    </a>  
+    </div>
+    
+    `;
+    
+  });
+  displaySongs = displaySongs.join("");
+  // console.log(displayMenu);
+
+  pinContainer.innerHTML = displaySongs;
+}
+
+
+

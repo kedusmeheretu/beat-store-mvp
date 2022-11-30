@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid blue; */
+  
+}
+
+:root {
+  --card-width: 236px;
+  --card-border-radius: 16px;
+  --row-increment: 10px;
+  --card-small: 26;
+  --card-medium: 33;
+  --card-large: 45;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a:hover {
+  color: gray;
+  transition: 0.3s ease;
+}
+
+body{
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+  font-size: 1.6rem;
+}
+
+/* -------------------------------- NAV ---------------------------------- */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  /* border: 1px solid red; */
+  /* border: 2px solid red; */
+  width: 100%;
+}
+
+nav {
+  flex: 1;
+  height: 90%;
+  /* border: 1px solid red; */
+  padding: 0 3rem 0 3rem;
+}
+
+.main-nav-links {
+  display: flex;
+  flex-direction: space-between;
+  align-items: center;
+  /* border: 1px solid green; */
+  height: 90%;
+  width: 100%;
+  font-weight: 600;
+
+}
+
+
+
+
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: none;
+  transition: all 0.3s linear; 
+}
+
+.nav-toggle:hover {
+  color: black;
+  transform: rotate(90deg);
+}
+
+.fa-magnifying-glass:before, .fa-search:before {
+  content: "\f002";
+  margin: 0 10px 30px 13px;
+  color: rgb(158, 156, 156);
+}
+
+.search-box-container {
+  /* border: 1px solid black; */
+  width: 80%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  background: rgb(207,207,207);
+}
+
+input {
+  color: rgb(25,100,241);
+  border: none;
+  /* border-radius: 5%; */
+  flex: 1;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(207, 207, 207);
+  border-radius: 0 20px 20px 0;
+}
+
+input:active {
+  border: none;
+  outline: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(158, 156, 156);
+  /* opacity: 1;  */
+  font-size: 1.6rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+
+input:focus{
+  outline: none;
+  -webkit-outline: none;
+  border: 0;
+}
+
+span.material-symbols-outlined {
+  font-size: 28px;
+  padding: 0 0 0 50px;
+}
+
+
+
+.logo > a > img {
+  width: 30px;
+}
+
+/* -------------------------------- filter-btns ---------------------------------- */
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+filter.btn {
+  font-size: 1.6rem;
+}
+
+.btn {
+  font-size: 1.6rem;
+}
+.btn:hover {
+}
+
+.hype:hover {
+  background: orange;
+  border-radius: var(--card-border-radius);
+  transition: 0.3s ease;
+}
+
+.uplifting:hover{
+  color: white;
+  background: purple;
+  border-radius: var(--card-border-radius);
+  transition: 0.3s ease;
+}
+
+.mellow:hover {
+  color: white;
+  background: blue;
+  border-radius: var(--card-border-radius);
+  transition: 0.3s ease;
+}
+.all:hover {
+  color: black;
+  background: gold;
+  border-radius: var(--card-border-radius);
+  transition: 0.3s ease;
+}
+
+
+/* -------------------------------- pins/main ---------------------------------- */
+main {
+  display: grid;
+  justify-content: center;
+  width: 100vw;
+  background: white;
+}
+
+.pin-container {
+  margin: 0;
+  padding: 0;
+  width: 85vw;
+  /* position: absolute; */
+  /* left: 50%; */
+  /* transform: translateX(50%); */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--card-width));
+  /* background-color: #000; */
+  grid-auto-rows: var(--row-increment);
+  justify-content: center;
+}
+
+.card {
+  padding: 0;
+  margin: 15px 10px;
+  border-radius: var(--card-border-radius);
+  /* background: red; */
+  border: none;
+}
+
+.card-small {
+  grid-row-end: span var(--card-small);
+}
+.card-medium {
+  grid-row-end: span var(--card-medium);
+}
+.card-large {
+  grid-row-end: span var(--card-large);
+}
+.pin-img {
+  /* border: 1px solid black; */
+  /* height: 100%; */
+  width: 100%;
+  border-radius: var(--card-border-radius);
+}
+
+.item-title {
+ margin-bottom: 5rem;
+}
+
+
+/* .background-img {
+  background: url('./images/item-1.jpg');
+  border: 1px solid black;
+} */
